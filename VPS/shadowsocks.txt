@@ -1,0 +1,33 @@
+安装依赖：
+apt install git
+apt install python-pip
+apt install m2crypto
+
+wget https://download.libsodium.org/libsodium/releases/libsodium-stable-[2018-06-07].tar.gz
+tar zfvx libsodium-stable-[2018-06-07].tar.gz?
+cd libsodium-stable
+./configure
+make && make check
+make install
+echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
+ldconfig
+
+安装SS：
+pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+
+SS配置文件：
+nano /etc/shadowsocks.json
+{
+    "server":"0.0.0.0",
+    "server_port":443,
+    "password":"[密码]",
+    "timeout":200,
+    "method":"chacha20-ietf-poly1305",
+    "fast_open": false
+}
+
+运行SS：
+ssserver -c /etc/shadowsocks.json -d start
+
+查看SS日志文件：
+less /var/log/shadowsocks.log

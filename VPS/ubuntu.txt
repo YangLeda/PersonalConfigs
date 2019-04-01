@@ -1,0 +1,24 @@
+清空SSH已知主机（如需要）：
+rm ~/.ssh/known_hosts*
+
+SSH连接:
+ssh root@[ip] -p [port]
+
+
+修改SSH端口：
+nano /etc/ssh/sshd_config
+Port [port]
+
+修改root密码：
+passwd root
+
+系统更新：
+apt update
+apt upgrade
+
+开启BBR：
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
+sysctl net.ipv4.tcp_available_congestion_control
+lsmod | grep bbr

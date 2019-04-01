@@ -1,0 +1,7 @@
+apt install curl
+
+bash <(curl -L -s https://install.direct/go.sh)
+
+nano /etc/v2ray/config.json
+
+reboot
