@@ -11,7 +11,7 @@
       "protocol":"socks",
       "settings":{
         "auth":"noauth",
-        "udp":false,
+        "udp":true,
         "ip":"127.0.0.1"
       },
       "sniffing":{
@@ -35,7 +35,7 @@
             "users":[
               {
                 "id":"0000-0000-0000-0000-0000",
-                "alterId":64,
+                "alterId":4,
                 "security":"auto"
               }
             ]
@@ -51,6 +51,9 @@
         "wsSettings":null,
         "httpSettings":null,
         "quicSettings":null
+      },
+      "mux": {
+        "enabled": true
       }
     },
     {
