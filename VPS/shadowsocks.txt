@@ -1,10 +1,10 @@
-°²×°ÒÀÀµ£º
+å®‰è£…ä¾èµ–ï¼š
 apt install git
 apt install python-pip
 apt install m2crypto
 
-wget https://download.libsodium.org/libsodium/releases/libsodium-stable-[2018-06-07].tar.gz
-tar zfvx libsodium-stable-[2018-06-07].tar.gz?
+wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz
+tar zfvx LATEST.tar.gz
 cd libsodium-stable
 ./configure
 make && make check
@@ -12,22 +12,22 @@ make install
 echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
 ldconfig
 
-°²×°SS£º
+å®‰è£…SSï¼š
 pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 
-SSÅäÖÃÎÄ¼ş£º
+SSé…ç½®æ–‡ä»¶ï¼š
 nano /etc/shadowsocks.json
 {
     "server":"0.0.0.0",
     "server_port":443,
-    "password":"[ÃÜÂë]",
+    "password":"[å¯†ç ]",
     "timeout":200,
     "method":"chacha20-ietf-poly1305",
     "fast_open": false
 }
 
-ÔËĞĞSS£º
+è¿è¡ŒSSï¼š
 ssserver -c /etc/shadowsocks.json -d start
 
-²é¿´SSÈÕÖ¾ÎÄ¼ş£º
+æŸ¥çœ‹SSæ—¥å¿—æ–‡ä»¶ï¼š
 less /var/log/shadowsocks.log
