@@ -82,5 +82,16 @@ Set the root password.
 
 
 Boot loader.
+# pacman -S grub os-prober
+# grub-install --target=i386-pc /dev/sda
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 
+Exit the chroot environmen.
+# exit
+
+
+Reboot.
+# reboot
+
+Log in as root.
