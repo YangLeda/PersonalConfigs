@@ -14,3 +14,48 @@ Update the system clock.
 
 Partition the disks.
 # fdisk -l
+# cfdisk
+Mount point   Partition	  Partition type ID	  Boot flag	  Suggested size
+/	            /dev/sda1	  83: Linux	          Yes	        23–32 GiB
+[SWAP]	      /dev/sda2	  82: Linux swap	    No	        More than 512 MiB
+
+
+Format the partitions.
+# mkfs.ext4 /dev/sda1
+# mkswap /dev/sda2
+# swapon /dev/sda2
+
+
+Mount the file systems.
+# mount /dev/sda1 /mnt
+
+
+Select the mirrors.
+# vim /etc/pacman.d/mirrorlist
+Move the best mirror to the top of the list.
+
+
+Install the base packages.
+# pacstrap /mnt base
+
+
+Generate an fstab file.
+# genfstab -U /mnt >> /mnt/etc/fstab
+Check the resulting file.
+# vim /mnt/etc/fstab
+
+
+Change root into the new system.
+# arch-chroot /mnt
+
+
+Set the time zone.
+# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+# hwclock --systohc
+
+
+Localization.
+# vi /etc/locale.gen
+Uncomment:
+en_US.UTF-8 UTF-8
+zh_CN.UTF-8  UTF8
