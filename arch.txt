@@ -59,3 +59,28 @@ Localization.
 Uncomment:
 en_US.UTF-8 UTF-8
 zh_CN.UTF-8  UTF8
+# locale-gen
+Create the locale.conf file, and set the LANG variable accordingly.
+# vi /etc/locale.conf
+LANG=en_US.UTF-8
+
+
+Create the hostname file.
+# vi /etc/hostname
+myhostname
+
+
+Add matching entries to hosts.
+# vi /etc/hosts
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	myhostname.localdomain	myhostname
+
+
+Set the root password.
+# passwd
+
+
+Boot loader.
+
+
