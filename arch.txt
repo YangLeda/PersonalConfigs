@@ -1,0 +1,16 @@
+Verify if UEFI mode is enabled.
+# ls /sys/firmware/efi/efivars
+If the directory does not exist, the system may be booted in BIOS mode.
+
+
+Verify network connection.
+# ping archlinux.org
+
+
+Update the system clock.
+# timedatectl set-ntp true
+# timedatectl status
+
+
+Partition the disks.
+# fdisk -l
